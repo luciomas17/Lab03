@@ -72,7 +72,7 @@ public class SpellCheckerController {
 			   	}
 			    	
 			   	int countErrors = 0;
-			   	List<RichWord> richWords = model.spellCheckTextDicotomic(inputTextList);
+			   	List<RichWord> richWords = model.spellCheckText(inputTextList);
 		    	for(RichWord rw : richWords) {
 		    		if(rw.isCorrect() == false) {
 		    			this.txtOutput.appendText(rw.getWord()+"\n");			    			
