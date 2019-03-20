@@ -45,5 +45,9 @@ public class Dictionary {
 		
 		return richWords;
 	}
+	
+	public void resetDictionary() {
+		dictionary.clear();
+	}
 
 }

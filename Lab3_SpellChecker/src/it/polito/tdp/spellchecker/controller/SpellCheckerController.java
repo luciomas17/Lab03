@@ -50,7 +50,8 @@ public class SpellCheckerController {
     @FXML
     void doSpellCheck(ActionEvent event) {
 	    this.txtOutput.clear();
-	   	
+	   	model.resetDictionary();
+	    
 	   	String languageSelected = this.boxLanguage.getValue();
 	   	if(languageSelected == (null)) {
 	   		this.txtOutput.setText("Error: choose a language!");
