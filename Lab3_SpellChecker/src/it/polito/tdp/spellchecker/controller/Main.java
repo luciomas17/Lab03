@@ -1,6 +1,6 @@
 package it.polito.tdp.spellchecker.controller;
 
-import it.polito.tdp.spellchecker.model.DictionaryArrayList;
+import it.polito.tdp.spellchecker.model.DictionaryLinkedList;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -17,7 +17,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
-			DictionaryArrayList model = new DictionaryArrayList();
+			DictionaryLinkedList model = new DictionaryLinkedList();
 			SpellCheckerController controller = loader.getController();
 			
 			controller.setModel(model);

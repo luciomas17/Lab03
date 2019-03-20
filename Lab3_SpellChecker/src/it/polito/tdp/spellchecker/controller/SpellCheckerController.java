@@ -1,11 +1,11 @@
 package it.polito.tdp.spellchecker.controller;
 
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import it.polito.tdp.spellchecker.model.DictionaryArrayList;
+import it.polito.tdp.spellchecker.model.DictionaryLinkedList;
 import it.polito.tdp.spellchecker.model.RichWord;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +15,7 @@ import javafx.scene.control.TextArea;
 
 public class SpellCheckerController {
 	
-	DictionaryArrayList model = new DictionaryArrayList();
+	DictionaryLinkedList model = new DictionaryLinkedList();
 
 	@FXML
     private ResourceBundle resources;
@@ -64,7 +64,7 @@ public class SpellCheckerController {
 		    	String inputText = this.txtInput.getText();
 		    	String[] inputTextVector = inputText.split(" +");
 			    	
-		    	List<String> inputTextList = new ArrayList<String>();			    	
+		    	List<String> inputTextList = new LinkedList<String>();			    	
 		    	for(String s : inputTextVector) {
 			    	s = s.toLowerCase();
 			    	s = s.replaceAll("[.,\\/#!?$%\\^&\\*;:{}=\\-_`~()\\[\\]\"]", "");
@@ -72,7 +72,7 @@ public class SpellCheckerController {
 			   	}
 			    	
 			   	int countErrors = 0;
-			   	List<RichWord> richWords = model.spellCheckText(inputTextList);
+			   	List<RichWord> richWords = model.spellCheckTextDicotomic(inputTextList);
 		    	for(RichWord rw : richWords) {
 		    		if(rw.isCorrect() == false) {
 		    			this.txtOutput.appendText(rw.getWord()+"\n");			    			
@@ -100,7 +100,7 @@ public class SpellCheckerController {
 
     }
 
-	public void setModel(DictionaryArrayList model) {
+	public void setModel(DictionaryLinkedList model) {
 		this.model = model;
 		boxLanguage.getItems().addAll("Italian", "English");
 	}
