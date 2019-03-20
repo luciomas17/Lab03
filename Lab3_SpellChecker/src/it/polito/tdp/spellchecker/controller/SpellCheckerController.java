@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import it.polito.tdp.spellchecker.model.Dictionary;
+import it.polito.tdp.spellchecker.model.DictionaryArrayList;
 import it.polito.tdp.spellchecker.model.RichWord;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +15,7 @@ import javafx.scene.control.TextArea;
 
 public class SpellCheckerController {
 	
-	Dictionary model = new Dictionary();
+	DictionaryArrayList model = new DictionaryArrayList();
 
 	@FXML
     private ResourceBundle resources;
@@ -100,7 +100,7 @@ public class SpellCheckerController {
 
     }
 
-	public void setModel(Dictionary model) {
+	public void setModel(DictionaryArrayList model) {
 		this.model = model;
 		boxLanguage.getItems().addAll("Italian", "English");
 	}
