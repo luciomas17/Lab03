@@ -10,4 +10,13 @@ public class RichWord {
 		this.word = word;
 		this.isCorrect = isCorrect;
 	}
+
+	public String getWord() {
+		return word;
+	}
+
+	public boolean isCorrect() {
+		return isCorrect;
+	}
+
 }

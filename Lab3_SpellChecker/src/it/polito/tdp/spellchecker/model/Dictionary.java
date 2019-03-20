@@ -40,7 +40,7 @@ public class Dictionary {
 			if(dictionary.contains(word))
 				isCorrect = true;
 			
-			richWords.add(new RichWord("word", isCorrect));
+			richWords.add(new RichWord(word, isCorrect));
 		}
 		
 		return richWords;
